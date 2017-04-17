@@ -9,10 +9,13 @@ output:
 
 
 ## Loading and preprocessing the data
-Load data into data frame `activity`. 
+Download, unzip and load data into data frame `activity`. 
 ```{r}
-setwd('C:/Users/Toshiba/Documents/R/Coursera/Activity')
-activity <- read.csv("activity.csv")
+temp <- tempfile()
+download.file("http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip",temp)
+unzip(temp)
+unlink(temp)
+data <- read.csv("activity.csv")
 ```
 
 
